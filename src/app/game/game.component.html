@@ -1,0 +1,16 @@
+<div *ngFor="let e of [].constructor(this.numberTurn); let i = index">
+    <app-line [line]="this.board[i]"></app-line>
+    <app-line-hint [lineHint]="this.boardHint[i]"></app-line-hint>
+</div>
+
+
+<button (click)="play('🟦')">🟦</button>
+<button (click)="play('🟥')">🟥</button>
+<button (click)="play('🟩')">🟩</button>
+<button (click)="play('🟨')">🟨</button>
+<button (click)="play('🟪')">🟪</button>
+<button (click)="play('⬜')">⬜</button>
+<button (click)="deleteLastColorInLine()">X</button>
+<!--<button (click)="play('🟧')">orange</button>
+<button (click)="play('⬛')">noir</button>
+ 🟥🟨🟦🟧🟩⬜🟪⬛🟫-->
