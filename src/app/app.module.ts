@@ -7,6 +7,10 @@ import { GameComponent } from './game/game.component';
 import { LineComponent } from './game/line/line.component';
 import { LineHintComponent } from './game/line-hint/line-hint.component';
 import { KeyboardKeyComponent } from './keyboard-key/keyboard-key.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import { ModalEndGameComponent } from './game/modal-end-game/modal-end-game.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { KeyboardKeyComponent } from './keyboard-key/keyboard-key.component';
     GameComponent,
     LineComponent,
     LineHintComponent,
-    KeyboardKeyComponent
+    KeyboardKeyComponent,
+    ModalEndGameComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,   
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
