@@ -58,10 +58,7 @@ export class GameComponent implements OnInit {
 
   public compareLineResult(line:string[]): boolean {
     let dayResultClone = [...this.dayResult];
-    //if the line is same as dayResult
-    if(JSON.stringify(dayResultClone) === JSON.stringify(line)) {
-      return true;
-    }
+
     //else result is not same and we check if color are in array
     for(let i = 0; i < this.numberOfColorsPerLine; i++) {
       //if line[i] is at the same emplacement as dayResult[i]
@@ -78,7 +75,7 @@ export class GameComponent implements OnInit {
         }
     }
     console.log(this.boardHint)
-    return JSON.stringify(dayResultClone) === JSON.stringify(line);
+    return JSON.stringify(this.dayResult) === JSON.stringify(line);
   }
 
   public deleteLastColorInLine(): void {

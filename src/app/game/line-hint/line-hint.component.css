@@ -1,0 +1,13 @@
+.hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    border: 3px solid #2f2f2f;
+    background-color: #5c5c5c;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: 4px;
+    flex-flow: wrap;
+}

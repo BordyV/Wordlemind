@@ -5,7 +5,7 @@
     height: 100%;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: #0e0e0f;
 }
 .keyboard {

@@ -1,1 +1,11 @@
-<div><span *ngFor="let place of lineHint">{{place}},</span></div>
+<!--<div><span *ngFor="let place of lineHint">{{place}}</span></div>-->
+<div class="hint">
+    <div class="lineHint">
+        <span>{{lineHint[0] || '⚫'}}</span>
+        <span>{{lineHint[1]   || '⚫'}}</span>
+    </div>
+    <div class="lineHint">
+        <span>{{lineHint[2]  || '⚫'}}</span>
+        <span>{{lineHint[3]  || '⚫'}}</span>
+    </div>
+</div>
