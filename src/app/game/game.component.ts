@@ -21,6 +21,10 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.initGame();
+  }
+  
+  public initGame(): void {
     //generate the board
     for(let i = 0; i < this.numberTurn; i++) {
       this.board[i] = ['', '', '', ''];
@@ -28,6 +32,7 @@ export class GameComponent implements OnInit {
     }
     this.generateSolution();
   }
+
 
   public play(color: string): void {
     if(this.positionInTurn < this.numberTurn && !this.win) {
@@ -43,10 +48,13 @@ export class GameComponent implements OnInit {
           this.positionInLine = 0; 
           }
       }
+    } else {
+      this.resetGame();
     }
   }
 
   public generateSolution(): void {
+    this.dayResult = [];
     let possibleColorsClone = [...this.possibleColors];
     for(let i = 0; i < this.numberOfColorsPerLine; i++) {
       const randomColor = possibleColorsClone[Math.floor(Math.random() * possibleColorsClone.length)];
@@ -85,4 +93,10 @@ export class GameComponent implements OnInit {
     }
   }
 
+  public resetGame(): void {
+    this.initGame();
+    this.positionInLine = 0;
+    this.positionInTurn = 0;
+    this.win = false;
+  }
 }
