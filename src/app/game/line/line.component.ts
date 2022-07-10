@@ -8,10 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LineComponent implements OnInit {
   @Input() line: string[]= ['', '', '', ''];
 
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public trackColor(index: number, color: string): string {
+    return color;
+  }
 }

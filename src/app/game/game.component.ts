@@ -14,7 +14,7 @@ export class GameComponent implements OnInit {
   public numberTurn: number = 8;
   // is the number of posible position in a line 
   private numberOfColorsPerLine: number = 4;
-  private possibleColors: string[] = ['🟥','🟨','🟦','🟩','⬜','🟪'];
+  public possibleColors: string[] = ['#0078D7','#E81224','#16C60C','#FFF100','#886CE4','#F2F2F2'];
   private dayResult: string[] = [];
   private win: boolean = false;
 
@@ -47,9 +47,10 @@ export class GameComponent implements OnInit {
   }
 
   public generateSolution(): void {
+    let possibleColorsClone = [...this.possibleColors];
     for(let i = 0; i < this.numberOfColorsPerLine; i++) {
-      const randomColor = this.possibleColors[Math.floor(Math.random() * this.possibleColors.length)];
-      this.possibleColors.splice(this.possibleColors.indexOf(randomColor), 1);
+      const randomColor = possibleColorsClone[Math.floor(Math.random() * possibleColorsClone.length)];
+      possibleColorsClone.splice(possibleColorsClone.indexOf(randomColor), 1);
       this.dayResult.push(randomColor);
     }
     console.log(this.dayResult);
@@ -79,6 +80,7 @@ export class GameComponent implements OnInit {
     console.log(this.boardHint)
     return JSON.stringify(dayResultClone) === JSON.stringify(line);
   }
+
   public deleteLastColorInLine(): void {
     if(this.positionInLine > 0) {
       this.positionInLine--;

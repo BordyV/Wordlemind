@@ -1,16 +1,15 @@
-<div *ngFor="let e of [].constructor(this.numberTurn); let i = index">
-    <app-line [line]="this.board[i]"></app-line>
+<div class="game" *ngFor="let e of [].constructor(this.numberTurn); let i = index">
+    <app-line class="gameLine" [line]="this.board[i]"></app-line>
     <app-line-hint [lineHint]="this.boardHint[i]"></app-line-hint>
 </div>
 
-
-<button (click)="play('🟦')">🟦</button>
-<button (click)="play('🟥')">🟥</button>
-<button (click)="play('🟩')">🟩</button>
-<button (click)="play('🟨')">🟨</button>
-<button (click)="play('🟪')">🟪</button>
-<button (click)="play('⬜')">⬜</button>
-<button (click)="deleteLastColorInLine()">X</button>
-<!--<button (click)="play('🟧')">orange</button>
-<button (click)="play('⬛')">noir</button>
- 🟥🟨🟦🟧🟩⬜🟪⬛🟫-->
+<div class="keyboard">
+    <div *ngFor="let color of this.possibleColors">
+        <app-keyboard-key [colorKey]="color" (colorKeyPlay)="play($event)"></app-keyboard-key>
+    </div>
+    <img
+    src="./../../assets/arrow_back.svg"
+    height="87px"
+    width="100px" (click)="deleteLastColorInLine()"/>
+</div>
+<!--🟦🟥🟩🟨🟪⬜-->

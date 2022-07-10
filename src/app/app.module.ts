@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 import { LineComponent } from './game/line/line.component';
 import { LineHintComponent } from './game/line-hint/line-hint.component';
+import { KeyboardKeyComponent } from './keyboard-key/keyboard-key.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
     LineComponent,
-    LineHintComponent
+    LineHintComponent,
+    KeyboardKeyComponent
   ],
   imports: [
     BrowserModule,
