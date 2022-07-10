@@ -1,0 +1,15 @@
+.resultColor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #2f2f2f;
+    border-radius: 100%;
+    box-sizing: border-box;
+    margin: 4px;
+}
+.resultLine {
+    display: flex;
+
+}

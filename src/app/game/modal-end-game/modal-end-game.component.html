@@ -1,6 +1,7 @@
 <div class="modal">
-    <h1 mat-dialog-title *ngIf="win">Bravo ! </h1>
-    <h1 mat-dialog-title *ngIf="!win">Unlucky... </h1>
+    <h1 mat-dialog-title *ngIf="data.win">Bravo ! </h1>
+    <h1 mat-dialog-title *ngIf="!data.win">Unlucky... </h1>
+    <div mat-dialog-content>Solution was : <div class="resultLine"><span class="resultColor" *ngFor="let color of data.result" [ngStyle]="{'background-color': color}"></span></div></div>
     <div mat-dialog-actions>
         <button mat-button mat-dialog-close>Close</button>
         <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Play again</button>

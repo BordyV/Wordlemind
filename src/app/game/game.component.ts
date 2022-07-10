@@ -111,7 +111,7 @@ export class GameComponent implements OnInit {
 
   public openEndGameModal(): void {
     //open modal end game and pass win data (true or false)
-    const dialogRef = this.dialog.open(ModalEndGameComponent, { data: this.win });
+    const dialogRef = this.dialog.open(ModalEndGameComponent, { data: {win: this.win, result: this.dayResult} });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.resetGame();

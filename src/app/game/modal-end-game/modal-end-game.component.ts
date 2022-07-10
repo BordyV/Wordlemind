@@ -10,9 +10,14 @@ import { GameComponent } from '../game.component';
 export class ModalEndGameComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<GameComponent>,
-    @Inject(MAT_DIALOG_DATA) public win: boolean) { }
+    @Inject(MAT_DIALOG_DATA) public data: ParamModalEndGame) { }
 
+    public resultFinal: string[] = [];
   ngOnInit(): void {
   }
 
+}
+export interface ParamModalEndGame {
+  win: boolean;
+  result: string[];
 }
