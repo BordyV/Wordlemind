@@ -9,3 +9,6 @@
     box-sizing: border-box;
     margin: 4px;
 }
+.pointer {
+    cursor: pointer;
+}

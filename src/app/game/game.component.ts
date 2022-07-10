@@ -79,7 +79,7 @@ export class GameComponent implements OnInit {
   }
 
   public deleteLastColorInLine(): void {
-    if(this.positionInLine > 0) {
+    if(this.positionInLine > 0 && !this.win) {
       this.positionInLine--;
       this.board[this.positionInTurn][this.positionInLine] = '';
     }
