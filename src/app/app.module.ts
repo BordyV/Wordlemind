@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { ModalEndGameComponent } from './game/modal-end-game/modal-end-game.component';
+import { ModalHelpComponent } from './modal-help/modal-help.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ModalEndGameComponent } from './game/modal-end-game/modal-end-game.comp
     LineComponent,
     LineHintComponent,
     KeyboardKeyComponent,
-    ModalEndGameComponent
+    ModalEndGameComponent,
+    ModalHelpComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ModalHelpComponent } from '../modal-help/modal-help.component';
 import { ModalEndGameComponent } from './modal-end-game/modal-end-game.component';
 
 @Component({
@@ -24,6 +25,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
     this.initGame();
+    this.dialog.open(ModalHelpComponent);
   }
 
   public initGame(): void {
@@ -70,7 +72,6 @@ export class GameComponent implements OnInit {
       possibleColorsClone.splice(possibleColorsClone.indexOf(randomColor), 1);
       this.dayResult.push(randomColor);
     }
-    console.log(this.dayResult);
   }
 
   public compareLineResult(line: string[]): boolean {
@@ -91,7 +92,6 @@ export class GameComponent implements OnInit {
         dayResultClone.splice(dayResultClone.indexOf(line[i]), 1);
       }
     }
-    console.log(this.boardHint)
     return JSON.stringify(this.dayResult) === JSON.stringify(line);
   }
 

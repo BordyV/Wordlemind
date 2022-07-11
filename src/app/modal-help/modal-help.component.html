@@ -1,0 +1,25 @@
+<div class="modal" id="modalHelp">
+    <h1 mat-dialog-title>How to play ?</h1>
+    <div mat-dialog-content>
+        This game is <b>Mastermind</b> but on web.
+        <br>
+        The game is simple, you have to guess the combination of colors.
+        <br>
+        The combination is made of 4 colors and the game will check every turn if the combination is right.
+        <br>
+        The game will tell you with hint if the combination is right or wrong.
+        <br>
+        The game will end when you have guessed the right combination or you have tried to more times.
+        <br>
+        <h3>How hints works ?</h3>
+        <div>
+            <app-line-hint [lineHint]="lineHint"></app-line-hint>
+        <p> 🟠 This color say that one color of the combination is right and have a good placement but you dont know wich one.</p>
+        <p> ⚪ This color say that one color of the combination is right but have a bad placement but you dont know wich one.</p>
+        <p> ⚫ This color say that one color of the combination is not in the combination.</p>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close>Close</button>
+    </div>
+</div>
