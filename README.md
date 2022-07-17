@@ -2,6 +2,8 @@
 
 This project is **Mastermind** game but on web.
 
+If you want to try it out go on : https://valentinbordy.fr/wordlemind/
+
 ## How to play ?
 
 The game is simple, you have to guess the combination of colors.
@@ -11,7 +13,6 @@ The combination is made of 4 colors and the game will check every turn if the co
 The game will tell you with hint if the combination is right or wrong.
 
 The game will end when you have guessed the right combination or you have tried to more times.
-
 
 ## How hints works ?
 
