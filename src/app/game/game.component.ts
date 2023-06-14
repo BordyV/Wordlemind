@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalHelpComponent } from '../modal-help/modal-help.component';
 import { ModalEndGameComponent } from './modal-end-game/modal-end-game.component';
+import * as seedrandom from 'seedrandom';
 
 @Component({
   selector: 'app-game',
@@ -34,7 +35,7 @@ export class GameComponent implements OnInit {
       this.board[i] = ['', '', '', ''];
       this.boardHint[i] = [];
     }
-    this.generateSolution();
+    this.generateDaySolution();
   }
 
 
@@ -64,14 +65,24 @@ export class GameComponent implements OnInit {
     }
   }
 
-  public generateSolution(): void {
+  public generateSolution(seed: number): void {
     this.dayResult = [];
     let possibleColorsClone = [...this.possibleColors];
     for (let i = 0; i < this.numberOfColorsPerLine; i++) {
-      const randomColor = possibleColorsClone[Math.floor(Math.random() * possibleColorsClone.length)];
+      const randomColor = possibleColorsClone[Math.floor(seed * possibleColorsClone.length)];
       possibleColorsClone.splice(possibleColorsClone.indexOf(randomColor), 1);
       this.dayResult.push(randomColor);
     }
+  }
+
+  public generateDaySolution(): void {
+    const currentDate = new Date();
+    const day = currentDate.getDay().toString();
+    const month = currentDate.getMonth().toString();
+    const year = currentDate.getFullYear().toString();
+    const currentDateConcat = day + month + year;
+    const seed = seedrandom(currentDateConcat);
+    this.generateSolution(seed());
   }
 
   public compareLineResult(line: string[]): boolean {
